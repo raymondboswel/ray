@@ -2,6 +2,8 @@
     import { assets} from "$app/paths";
     import { draw, fly, scale } from 'svelte/transition';
     import { quintOut } from 'svelte/easing';
+    import {about1, about2, about3 } from '$lib/about.text';
+    import Nav from '$lib/components/Nav.svelte';
 import { onMount } from "svelte";
     let show = false;
     let show1 = false;
@@ -11,31 +13,31 @@ import { onMount } from "svelte";
     let showText = false;
     onMount(() => {
         setTimeout(() => show = true, 500);
-        setTimeout(() => show1 = true, 2000);
+        setTimeout(() => show1 = true, 1000);
 		    setTimeout(() => {
           showHi = true; 
           setTimeout(() => {
             showHi = false
             setTimeout(() => {
               showText = true;
-            }, 1500)
-          }, 2000)}
+            }, 500)
+          }, 1000)}
           ,300)
     })
 
 </script>
 
 {#if show}
-<article class="h-full w-full">
+<article style="background-color: #0B0C10" class="h-full w-full overflow-x-none pt-8">
     <div class="flex justify-between items-center mx-20">
-        <img transition:fly="{{delay: 300, duration: 400, x: -500, y: 0, opacity: 1, easing: quintOut}}"  src="{assets}/logo.png" alt=""/>
-        <img alt="" transition:fly="{{delay: 0, duration: 400, x: 200, y: 0, opacity: 1, easing: quintOut}}" class="h-20 w-20 rounded-full" src="{assets}/beer_hat_l.jpg" />
+        <div transition:fly="{{delay: 300, duration: 400, x: -500, y: 0, opacity: 1, easing: quintOut}}" class="text-shale text-3xl" >Hi! I'm Raymond. </div>
+        <img alt="" transition:fly="{{delay: 0, duration: 400, x: 200, y: 0, opacity: 1, easing: quintOut}}" class="h-20 w-20 rounded-full border-2 border-shale" src="{assets}/beer_hat_l.jpg" />
     </div>
     
-    <section class="flex justify-end ml-20 mr-10">
+    <section class="flex justify-end ml-20 mr-10 mt-8">
         <div class="flex-grow flex flex-col ">
             {#if showHi} 
-            <svg class="absolute top-1 -right-24 " out:scale="{{duration: 1500, delay: 0, start: 0, easing: quintOut}}" width="200" height="100">
+            <!-- <svg class="absolute top-1 -right-24 " out:scale="{{duration: 1500, delay: 0, start: 0, easing: quintOut}}" width="200" height="100">
                 <g>
                     <path in:draw="{{duration, delay}}"
                     id="path292"
@@ -70,37 +72,26 @@ import { onMount } from "svelte";
                     d="m 63.053714,34.051746 c -1.131102,0.761015 -2.182813,1.617863 -3.104195,2.622692 -0.660313,0.84351 -1.246169,1.87941 -1.283671,2.98369 -0.01233,0.36333 0.03005,0.72646 0.04508,1.08969 0.104105,0.35551 0.170929,0.72414 0.312322,1.06654 0.492061,1.19157 1.423469,2.3175 2.479159,3.04649 0.286949,0.19815 0.604105,0.34852 0.906158,0.52279 1.514689,0.6577 3.129616,1.04275 4.752494,0.51649 0.358584,-0.11628 0.688088,-0.30814 1.032131,-0.46221 1.422837,-0.89941 2.827491,-2.18534 3.21223,-3.90825 0.0946,-0.42365 0.08535,-0.86396 0.128021,-1.29594 -0.08443,-0.42407 -0.103688,-0.86652 -0.25328,-1.2722 -0.750113,-2.03427 -2.744833,-2.997919 -4.603965,-3.780226 -1.356891,-0.354621 -0.67206,-0.246234 -2.053658,-0.330433 -3.459118,-0.01659 -3.482571,4.875349 -0.02344,4.891929 v 0 c -0.06082,-0.12933 -0.04852,-0.0595 0.208806,-0.0403 0.600438,0.24109 0.573807,0.21571 1.158518,0.51064 0.146015,0.0736 0.280336,0.17148 0.432186,0.2322 0.04124,0.0165 0.09929,0.0226 0.133086,-0.006 0.07661,-0.0653 -7.94e-4,-0.22972 0.110357,-0.2811 0.404186,-0.50601 -0.325019,0.92562 -0.61891,0.89556 -0.05642,0.0442 -0.123862,0.077 -0.169252,0.13243 -0.01669,0.0204 0.03507,0.1314 -0.04518,0.12952 -0.36815,-0.009 -0.730486,-0.16261 -1.08534,-0.24157 -0.490397,-0.19084 -0.660199,-0.44116 -0.994957,-0.84073 -0.0865,-0.10324 -0.08417,-0.0794 -0.155993,-0.0309 -0.151022,0.32958 -0.06164,-0.21039 0.01889,-0.26158 0.535665,-0.62897 1.211874,-1.09257 1.842783,-1.61523 3.022034,-1.683175 0.641665,-5.956979 -2.380369,-4.273803 z"
                     style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#435db0;stroke-width:1.965;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
               </g>
-            </svg>
+            </svg> -->
             {/if}
             {#if showText}
-              <p class="mr-4 text-gray-700" transition:scale="{{delay: 0, duration: 400, start: 0, opacity: 1, easing: quintOut}}">
-                Hi there! I am a software engineer from Pretoria, South Africa. I mainly work as a frontend 
-                engineer at Fastcomm, and also lead a really great team. We mostly build projects in Angular and Elixir,
-                though I'm really excited about Svelte as well these days (which is what this little site is built in). 
+              <p class="mr-4 text-shale" transition:scale="{{delay: 0, duration: 400, start: 0, opacity: 1, easing: quintOut}}">
+                {about1}
               </p>
 
-              <p class="mr-4 my-2 text-gray-700" transition:scale="{{delay: 800, duration: 400, start: 0, opacity: 1, easing: quintOut}}">
-                At Fastcomm I'm the organizer of the Angular/Web guild, and regularly contribute content and presentations, with topics 
-                ranging from Angular performance pitfalls and optimizations, to more general topics such as Functional Programming principles.
+              <p class="mr-4 my-2  text-shale" transition:scale="{{delay: 800, duration: 400, start: 0, opacity: 1, easing: quintOut}}">
+                {about2}
               </p>              
-              <p class="mr-4 text-gray-700" transition:scale="{{delay: 800, duration: 400, start: 0, opacity: 1, easing: quintOut}}">
-                When I'm not programming, I like to get outdoors and ride my mountain bike, go climb some rocks or hang out with my amazing wife.
+              <p class="mr-4  text-shale" transition:scale="{{delay: 800, duration: 400, start: 0, opacity: 1, easing: quintOut}}">
+                {about3}
               </p>   
             {/if}
         </div>
-        <div class="font-bold flex flex-col justify-between" >
-            <span transition:fly="{{delay: 500, duration: 400, x: 500, y: 0, opacity: 1, easing: quintOut}}" class="menu-item mb-2">
-                About
-            </span>
-            <span transition:fly="{{delay: 500, duration: 400, x: 500, y: 0, opacity: 1, easing: quintOut}}" class="menu-item mb-2">
-                Career
-            </span>
-            <span transition:fly="{{delay: 600, duration: 400, x: 500, y: 0, opacity: 1, easing: quintOut}}" class="menu-item mb-2">
-                Programming
-            </span>
-            <span transition:fly="{{delay: 700, duration: 400, x: 500, y: 0, opacity: 1, easing: quintOut}}" class="menu-item mb-2">
-                Interests
-            </span>
+        <div class="font-bold md:flex-col justify-between md:flex hidden" >
+            <Nav></Nav>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full flex justify-center md:hidden">
+            <Nav></Nav>
         </div>
     </section>
 </article>
@@ -109,8 +100,9 @@ import { onMount } from "svelte";
 <style>
 
     .menu-item {
-        border:solid 3px rgb(4, 97, 174);
+        border:solid 3px #46A29F;
     }    
+
 
     span {           
         cursor: pointer;
@@ -118,7 +110,8 @@ import { onMount } from "svelte";
         border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
         padding:1em;
         line-height:1.5em;
-        background:rgb(19, 101, 179);
+        background:#46A29F;
+        margin-right: 4px;
     }
 
     path {
