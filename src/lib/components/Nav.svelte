@@ -6,19 +6,19 @@
 
 <span
 	on:click={() => goto('/about')}
-	transition:fly={{ delay: 500, duration: 400, x: 500, y: 0, opacity: 1, easing: quintOut }}
+	in:fly={{ delay: 500, duration: 400, x: 500, y: 0, opacity: 1, easing: quintOut }}
 	class=" menu-item mb-2 hover:bg-dark-grey"
 >
 	About
 </span>
 <span
-	transition:fly={{ delay: 600, duration: 400, x: 500, y: 0, opacity: 1, easing: quintOut }}
+	in:fly={{ delay: 600, duration: 400, x: 500, y: 0, opacity: 1, easing: quintOut }}
 	class="menu-item mb-2 hover:bg-dark-grey"
 >
 	Programming
 </span>
 <span
-	transition:fly={{ delay: 700, duration: 400, x: 500, y: 0, opacity: 1, easing: quintOut }}
+	in:fly={{ delay: 700, duration: 400, x: 500, y: 0, opacity: 1, easing: quintOut }}
 	class="menu-item mb-2 hover:bg-dark-grey"
 >
 	Interests
