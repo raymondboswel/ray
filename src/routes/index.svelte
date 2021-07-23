@@ -25,38 +25,24 @@
 		}, 300);
 	});
 </script>
-
-{#if show}
-	<!-- <section class="flex justify-end ml-20 mr-10 mt-8">
-        <div class="flex-grow flex flex-col ">
-            {#if showText}
-              <p class="mr-4 text-shale" transition:scale="{{delay: 0, duration: 400, start: 0, opacity: 1, easing: quintOut}}">
-                {about1}
-              </p>
-
-              <p class="mr-4 my-2  text-shale" transition:scale="{{delay: 800, duration: 400, start: 0, opacity: 1, easing: quintOut}}">
-                {about2}
-              </p>              
-              <p class="mr-4  text-shale" transition:scale="{{delay: 800, duration: 400, start: 0, opacity: 1, easing: quintOut}}">
-                {about3}
-              </p>   
-            {/if}
-        </div>
-    </section> -->
-{/if}
+ 
+<section class="h-full p-3 bg-dark-grey">
+    <header class="text-shale text-xl font-bold">Welcome to my home on the web.</header>
+    <p>I'm going to gradually deploy and expose some of the toy projects I've done 
+        in the programming section. The about and interests section will contain more personal stuff. I hope you enjoy your stay!
+    </p>
+</section>
 
 <style>
 	.menu-item {
 		border: solid 3px #46a29f;
 	}
 
-	span {
-		cursor: pointer;
+	section {
 		color: white;
 		border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 		padding: 1em;
 		line-height: 1.5em;
-		background: #46a29f;
 		margin-right: 4px;
 	}
 

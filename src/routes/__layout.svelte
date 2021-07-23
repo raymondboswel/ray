@@ -4,6 +4,8 @@
 	import { assets } from '$app/paths';
 	import {  fly } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
+import { goto } from '$app/navigation';
+
   let show = false;
   setTimeout(() => {
     show = true;
@@ -20,16 +22,17 @@
 			Hi! I'm Raymond.
 		</div>
 		<img
-			alt=""
+      alt=""
+  on:click="{() => goto("/")}"
 			in:fly={{ delay: 0, duration: 400, x: 200, y: 0, opacity: 1, easing: quintOut }}
-			class="h-20 w-20 rounded-full border-2 border-shale"
+			class="h-20 w-20 rounded-full border-2 border-shale cursor-pointer"
 			src="{assets}/beer_hat_l.jpg"
 		/>
   </div>
   {/if}
 
 	<section class="flex">
-		<div class="flex-grow ml-20 mt-10">
+		<div class="flex-grow ml-20 mr-10 mt-10">
 			<slot />
     </div>
     {#if show}

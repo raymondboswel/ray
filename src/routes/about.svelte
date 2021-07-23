@@ -12,42 +12,44 @@
 	let showHi = false;
 	let showText = false;
 	onMount(() => {
-		setTimeout(() => (show = true), 500);
-		setTimeout(() => (show1 = true), 1000);
 		setTimeout(() => {
-			showHi = true;
-			setTimeout(() => {
-				showHi = false;
-				setTimeout(() => {
-					showText = true;
-				}, 500);
-			}, 1000);
-		}, 300);
+      showText = true;
+    }, 500)
 	});
 </script>
 
-<section>
+{#if showText}
+<section class="bg-dark-grey" in:scale={{ delay: 0, duration: 400, start: 0, opacity: 1, easing: quintOut }}>
 	<div class="flex-grow flex flex-col ">
-		{#if showText}
 			<p
 				class="mr-4 text-shale"
-				transition:scale={{ delay: 0, duration: 400, start: 0, opacity: 1, easing: quintOut }}
+				
 			>
 				{about1}
 			</p>
 
 			<p
 				class="mr-4 my-2  text-shale"
-				transition:scale={{ delay: 800, duration: 400, start: 0, opacity: 1, easing: quintOut }}
+				in:scale={{ delay: 800, duration: 400, start: 0, opacity: 1, easing: quintOut }}
 			>
 				{about2}
 			</p>
 			<p
 				class="mr-4  text-shale"
-				transition:scale={{ delay: 800, duration: 400, start: 0, opacity: 1, easing: quintOut }}
+				in:scale={{ delay: 800, duration: 400, start: 0, opacity: 1, easing: quintOut }}
 			>
 				{about3}
 			</p>
-		{/if}
-	</div>
-</section>
+    </div>
+  </section>
+  {/if}
+
+<style>
+  	section {
+		color: white;
+		border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+		padding: 1em;
+		line-height: 1.5em;
+		margin-right: 4px;
+	}
+</style>
