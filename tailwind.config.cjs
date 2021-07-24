@@ -7,7 +7,8 @@ const config = {
 			'dark-grey': '#202833',
 			shale: '#C5C6C8',
 			aqua: '#66FCF1',
-			marine: '#46A29F'
+			marine: '#46A29F',
+			white: '#fff'
 		},
 		extend: {}
 	},

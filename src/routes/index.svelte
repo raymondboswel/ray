@@ -25,12 +25,15 @@
 		}, 300);
 	});
 </script>
- 
+
 <section class="h-full p-3 bg-dark-grey">
-    <header class="text-shale text-xl font-bold">Welcome to my home on the web.</header>
-    <p>It's still very much under construction, but in a nutshell: I'm going to gradually deploy and expose some of the toy projects I've done 
-        in the programming section. The about and interests section will contain more personal stuff. I hope you enjoy your stay!
-    </p>
+	<header class="text-shale text-xl font-bold">Welcome to my home on the web.</header>
+	<p>
+		It's still very much under construction, but in a nutshell:
+		<br /> I'm going to gradually deploy and expose some of the toy projects I've done in the
+		programming section. <br />The about and interests section will contain more personal stuff.
+		<br />I hope you enjoy your stay!
+	</p>
 </section>
 
 <style>

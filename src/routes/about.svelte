@@ -13,18 +13,18 @@
 	let showText = false;
 	onMount(() => {
 		setTimeout(() => {
-      showText = true;
-    }, 500)
+			showText = true;
+		}, 500);
 	});
 </script>
 
 {#if showText}
-<section class="bg-dark-grey" in:scale={{ delay: 0, duration: 400, start: 0, opacity: 1, easing: quintOut }}>
-	<div class="flex-grow flex flex-col ">
-			<p
-				class="mr-4 text-shale"
-				
-			>
+	<section
+		class="bg-dark-grey"
+		in:scale={{ delay: 0, duration: 400, start: 0, opacity: 1, easing: quintOut }}
+	>
+		<div class="flex-grow flex flex-col ">
+			<p class="mr-4 text-shale">
 				{about1}
 			</p>
 
@@ -40,12 +40,12 @@
 			>
 				{about3}
 			</p>
-    </div>
-  </section>
-  {/if}
+		</div>
+	</section>
+{/if}
 
 <style>
-  	section {
+	section {
 		color: white;
 		border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 		padding: 1em;
