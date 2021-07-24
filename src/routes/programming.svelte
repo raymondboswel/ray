@@ -20,14 +20,14 @@
 
 {#if showContent}
 	<article
-		class="bg-dark-grey flex rounded shadow   "
+		class="bg-dark-grey flex rounded shadow   h-full "
 		in:scale={{ delay: 0, duration: 400, start: 0, opacity: 1, easing: quintOut }}
 	>
-		<section id="sidebar" class="text-white font-bold bg-marine rounded ">
+		<section id="sidebar" class="text-white font-bold bg-marine rounded hidden md:block ">
 			<div class="p-4">Projects</div>
 		</section>
-		<section class="flex-grow flex flex-col justify-evenly p-4">
-			<span class="bg-dark-grey rounded flex  border p-2 border-shale mb-3">
+		<section class="flex-grow block md:flex md:flex-col justify-start p-4 h-full overflow-y-auto">
+			<span class="bg-dark-grey rounded flex flex-col md:flex-row  border p-2 border-shale mb-3">
 				<img class="w-56 mr-2 cursor-pointer" src="{assets}/guilds.png" />
 				<aside class="text-white">
 					<div class="font-bold text-white text-lg">Guilds</div>

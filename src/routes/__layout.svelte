@@ -12,7 +12,7 @@
 	}, 100);
 </script>
 
-<article style="background-color: #0B0C10" class="h-full w-full overflow-x-none pt-8 px-12">
+<article style="background-color: #0B0C10" class="h-full w-full overflow-hidden pt-8 md:px-12 pb-16 flex flex-col md:pb-0">
 	{#if show}
 		<div class="flex justify-between items-center mx-20">
 			<div
@@ -31,15 +31,15 @@
 		</div>
 	{/if}
 
-	<section class="flex">
-		<div class="flex-grow ml-20 mr-10 mt-10">
+	<section class="flex h-full flex-grow pb-24">
+		<div class="flex-grow mx-4 md:ml-20 md:mr-10 mt-10 pb-14 md:pb-0 h-full">
 			<slot />
 		</div>
 		{#if show}
 			<div class="font-bold md:flex-col justify-start  md:flex hidden mr-16 mt-8">
 				<Nav />
 			</div>
-			<div class="absolute bottom-0 left-0 w-full flex justify-center md:hidden">
+			<div class="absolute bottom-2 left-0 w-full flex justify-center md:hidden">
 				<Nav />
 			</div>
 		{/if}

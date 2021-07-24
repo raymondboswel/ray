@@ -26,7 +26,7 @@
 	});
 </script>
 
-<section class="h-full p-3 bg-dark-grey">
+<section class=" p-3 bg-dark-grey">
 	<header class="text-shale text-xl font-bold">Welcome to my home on the web.</header>
 	<p>
 		It's still very much under construction, but in a nutshell:
