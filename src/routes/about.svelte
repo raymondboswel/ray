@@ -20,7 +20,7 @@
 
 {#if showText}
 	<section
-		class="bg-dark-grey"
+		class="bg-dark-grey h-full overflow-y-auto"
 		in:scale={{ delay: 0, duration: 400, start: 0, opacity: 1, easing: quintOut }}
 	>
 		<div class="flex-grow flex flex-col ">
@@ -30,13 +30,13 @@
 
 			<p
 				class="mr-4 my-2  text-shale"
-				in:scale={{ delay: 800, duration: 400, start: 0, opacity: 1, easing: quintOut }}
+				in:scale={{ delay: 0, duration: 400, start: 0, opacity: 1, easing: quintOut }}
 			>
 				{about2}
 			</p>
 			<p
 				class="mr-4  text-shale"
-				in:scale={{ delay: 800, duration: 400, start: 0, opacity: 1, easing: quintOut }}
+				in:scale={{ delay: 0, duration: 400, start: 0, opacity: 1, easing: quintOut }}
 			>
 				{about3}
 			</p>
