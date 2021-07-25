@@ -28,7 +28,7 @@
 		</section>
 		<section class="flex-grow block md:flex md:flex-col justify-start p-4 h-full overflow-y-auto">
 			<span class="bg-dark-grey rounded flex flex-col md:flex-row  border p-2 border-shale mb-3">
-				<img class="w-56 mr-2 cursor-pointer" src="{assets}/guilds.png" />
+				<img class="h-full md:w-56 md:mr-2 cursor-pointer" src="{assets}/guilds.png" />
 				<aside class="text-white">
 					<div class="font-bold text-white text-lg">Guilds</div>
 					<p>
@@ -44,10 +44,29 @@
 					</p>
 				</aside>
 			</span>
-			<!-- <span class="bg-dark-grey rounded flex flex-col border p-2 border-shale">
-				<img class="w-56" src="{assets}/guilds.png" />
-				<div class="font-bold text-white">Readable</div>
-			</span> -->
+			<span class="bg-dark-grey rounded flex flex-col md:flex-row  border p-2 border-shale mb-3">
+				<img class="w-full md:w-56 md:mr-2 cursor-pointer" src="{assets}/functional-composition.png" />
+				<aside class="text-white">
+					<div class="font-bold text-white text-lg">Functional Composition</div>
+					<p>
+            This fun little project was written to explore web audio, and showcase some functional programming
+            techniques for a presentation for my colleagues.
+					</p>
+					<p>Stack: Angular, RxJs, Web Audio API</p>
+					<p>
+						<a target="_blank" rel=external href="https://github.com/raymondboswel/functional-composition" class="text-aqua cursor-pointer underline">Code</a>
+						<a target="_blank" rel="external" href="https://functional-composition.vercel.app" class="text-aqua cursor-pointer underline">Live</a>
+					</p>
+				</aside>
+			</span>
 		</section>
 	</article>
 {/if}
+
+
+<style>
+  span {
+    min-height: 200px;
+    align-items: center;
+  }
+</style>
