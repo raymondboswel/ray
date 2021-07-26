@@ -26,8 +26,9 @@
 	Programming
 </span>
 <span
+on:click="{() => goto("/interests")}"
 	in:fly={{ delay: 700, duration: 400, x: 500, y: 0, opacity: 1, easing: quintOut }}
-	class="menu-item mb-2 hover:bg-dark-grey {$page.path == '/interests'
+	class="menu-item mb-2 hover:bg-dark-grey {$page.path.includes('/interests')
 		? 'bg-dark-grey'
 		: 'bg-marine'}"
 >

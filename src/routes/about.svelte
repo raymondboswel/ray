@@ -25,7 +25,11 @@
 	>
 		<div class="flex-grow flex flex-col ">
 			<p class="mr-4 text-shale">
-				{about1}
+        I am a software engineer from Pretoria, South Africa. </p>
+        <p class="mr-4 text-shale">I mainly work as a frontend 
+engineer at Fastcomm, and also lead a really great team. 
+        </p><p class="mr-4 text-shale">We build projects in Angular and Elixir,
+though I'm really excited about Svelte as well these days (which is what this little site is built in).
 			</p>
 
 			<p
