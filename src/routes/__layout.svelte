@@ -2,7 +2,7 @@
 	import '../app.postcss';
 	import Nav from '$lib/components/Nav.svelte';
 	import { assets } from '$app/paths';
-	import { fly } from 'svelte/transition';
+	import { scale, fly } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import { goto } from '$app/navigation';
 
@@ -24,7 +24,7 @@
 			<img
 				alt=""
 				on:click={() => goto('/')}
-				in:fly={{ delay: 0, duration: 400, x: 200, y: 0, opacity: 1, easing: quintOut }}
+				in:scale={{ delay: 0, duration: 400, start: 0, opacity: 1, easing: quintOut }}
 				class="h-20 w-20 rounded-full border-2 border-shale cursor-pointer"
 				src="{assets}/beer_hat_l.jpg"
 			/>
