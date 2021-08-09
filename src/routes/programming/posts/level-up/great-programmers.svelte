@@ -26,7 +26,7 @@ import EnableOthers from '$lib/components/EnableOthers.svelte';
     <header class="text-2xl">Great programmers:</header> 
     <div class="flex justify-around">
       <ul>
-        <li on:click="{showRocket}">Change the world</li>
+        <li on:click="{showRocket}">Change the world &lt-- click us</li>
       <li on:click="{showFactory}">Create new industries</li>
       <li on:click="{showEnableOthers}">Enable others</li>
         <li>Are voracious learners</li>
