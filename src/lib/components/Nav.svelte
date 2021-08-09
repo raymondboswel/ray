@@ -17,7 +17,7 @@
 	About
 </span>
 <span
-	on:click={() => goto('/programming')}
+	on:click={() => goto('/programming/projects')}
 	in:fly={{ delay: 600, duration: 400, x: 500, y: 0, opacity: 1, easing: quintOut }}
 	class="menu-item mb-2 hover:bg-dark-grey {$page.path == '/programming'
 		? 'bg-dark-grey'
