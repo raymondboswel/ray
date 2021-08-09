@@ -2,10 +2,15 @@
 	import { slide } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 import Factory from '$lib/components/Factory.svelte';
-  let factory = false;
+import Rocket from '$lib/components/Rocket.svelte';
+  let animation = undefined;
 
   function showFactory() {
-    factory = true;
+    animation = 'factory';
+  }
+
+  function showRocket() {
+    animation = 'rocket';
   }
 </script>
 
@@ -16,14 +21,16 @@ import Factory from '$lib/components/Factory.svelte';
     <header class="text-2xl">Great programmers:</header> 
     <div class="flex justify-around">
       <ul>
-        <li>Change the world</li>
+        <li on:click="{showRocket}">Change the world</li>
       <li on:click="{showFactory}">Create new industries</li>
         <li>Enable others</li>
         <li>Are voracious learners</li>
       </ul>
       <div class="ml-14 bg-white rounded">
-        {#if factory}
+        {#if animation == 'factory'}
         <Factory></Factory>
+        {:else if animation == 'rocket'}
+          <Rocket></Rocket>
         {/if}
       </div>
     </div>
