@@ -25,10 +25,9 @@
 	>
 		<div class="flex-grow flex flex-col ">
 			<p class="mr-4 text-shale">
-        I am a software engineer from South Africa, working as a team lead and full stack 
-engineer at Fastcomm. 
-        We build projects in Angular and Elixir,
-though I'm really excited about Svelte as well these days (which is what this little site is built in).
+				I am a software engineer from South Africa, working as a team lead and full stack engineer
+				at Fastcomm. We build projects in Angular and Elixir, though I'm really excited about Svelte
+				as well these days (which is what this little site is built in).
 			</p>
 
 			<p

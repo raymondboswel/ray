@@ -12,7 +12,10 @@
 	}, 100);
 </script>
 
-<article style="background-color: #0B0C10" class="h-full w-full overflow-hidden pt-8 md:px-12 pb-16 flex flex-col md:pb-0">
+<article
+	style="background-color: #0B0C10"
+	class="h-full w-full overflow-hidden pt-8 md:px-12 pb-16 flex flex-col md:pb-0"
+>
 	{#if show}
 		<div class="flex justify-between items-center mx-20">
 			<div
