@@ -47,7 +47,7 @@
 			<ul>
         <li >Makes cool graphics at the New York Times</li>
         <li>Creator of Rollup</li>
-				<li >Creator of Svelte</li>
+				<li >Creator of <a class="underline" href="https://svelte.dev" target="_blank">Svelte</a></li>
 			</ul>
 		</div>
   </section>
@@ -56,9 +56,5 @@
 <style>
 	ul {
 		list-style: inside;
-	}
-
-	li {
-		cursor: pointer;
 	}
 </style>

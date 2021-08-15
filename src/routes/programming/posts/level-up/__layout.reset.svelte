@@ -3,23 +3,19 @@
 
 	import { currentPage } from '$lib/stores/level-up-navigation.store';
 
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 
 	const navigationMap = {
+		3: '/programming/posts/level-up/meta-learning',
 		2: '/programming/posts/level-up/examples',
 		1: '/programming/posts/level-up/great-programmers',
 		0: '/programming/posts/level-up'
 	};
 
-	onMount(() => {
-		currentPage.subscribe((p) => {
-			console.log(window.location.pathname);
-			if (window.location.pathname !== navigationMap[p]) {
-				goto(navigationMap[p]);
-			}
-		});
-		document.addEventListener('keydown', function (event) {
-			switch (event.key) {
+	let unsubscribe;
+
+	function handleKeyDown(event) {
+		switch (event.key) {
 				case 'ArrowLeft':
 					currentPage.update((cur) => {
 						if (cur > 0) {
@@ -34,12 +30,30 @@
 						if (cur == Object.keys(navigationMap).length - 1) {
 							return cur;
 						} else {
+							console.log('current',cur);
 							return cur + 1;
 						}
 					});
 					break;
 			}
+	}
+
+	onDestroy(() => {
+		if(unsubscribe) {
+			unsubscribe();	
+			document.removeEventListener('keydown', handleKeyDown)
+		} 
+	})
+
+	onMount(() => {
+		unsubscribe = currentPage.subscribe((p) => {
+			console.log(p);
+			console.log(window.location.pathname);
+			if (window.location.pathname !== navigationMap[p]) {
+				goto(navigationMap[p]);
+			}
 		});
+		document.addEventListener('keydown', handleKeyDown);
 	});
 </script>
 
