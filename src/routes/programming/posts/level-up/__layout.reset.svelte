@@ -6,6 +6,7 @@
 	import { onMount } from 'svelte';
 
 	const navigationMap = {
+		2: '/programming/posts/level-up/examples',
 		1: '/programming/posts/level-up/great-programmers',
 		0: '/programming/posts/level-up'
 	};
