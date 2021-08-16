@@ -30,6 +30,7 @@
         <li>Break topics into chunks</li>
         <li>Spaced repetition</li>
         <li>Commit to one thing</li>
+        <li>Keep a list of things to learn at a later stage (to keep you focused on what you're  studying now) </li>
 			</ul>
 		</div>
   </section>

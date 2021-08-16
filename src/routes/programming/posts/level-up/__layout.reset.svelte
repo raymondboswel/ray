@@ -6,6 +6,8 @@
 	import { onDestroy, onMount } from 'svelte';
 
 	const navigationMap = {
+		5: '/programming/posts/level-up/ways-to-learn',
+		4: '/programming/posts/level-up/learning-ideas',
 		3: '/programming/posts/level-up/meta-learning',
 		2: '/programming/posts/level-up/examples',
 		1: '/programming/posts/level-up/great-programmers',
