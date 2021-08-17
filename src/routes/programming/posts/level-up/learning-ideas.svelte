@@ -9,7 +9,7 @@
 	<header class="text-3xl text-center">Learning Ideas</header>
 
 	<section class="p-10 flex">
-		<div class="mx-40 text-xl">
+		<div class="mx-5 md:mx-40 text-xl">
 			<ul>
         <li>Things to help you kick ass at work</li>
         <li>Satisfy your curiosity</li>

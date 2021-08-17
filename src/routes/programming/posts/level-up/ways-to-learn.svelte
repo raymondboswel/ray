@@ -1,7 +1,22 @@
 <script>
 	import { slide } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
-	let animation = undefined;
+  import { quintOut } from 'svelte/easing';
+  import { assets } from '$app/paths';
+  import { fade } from 'svelte/transition';
+import { onMount } from 'svelte';
+  
+  let showFeet = false;
+
+  onMount(() => {
+    setTimeout(() => {
+      showFeet = true;
+
+    }, 500)
+
+    setTimeout(() => {
+      showFeet = false;
+    }, 4000);
+  })
 
 </script>
 
@@ -9,7 +24,7 @@
 	<header class="text-3xl text-center">Ways to learn</header>
 
 	<section class="p-10 flex">
-		<div class="mx-40 text-xl">
+		<div class="mx-4 md:mx-40 text-xl">
 			<ul>
         <li>Online Courses
           <ul class="ml-8 ">
@@ -28,9 +43,38 @@
 			</ul>
 		</div>
   </section>
+  {#if showFeet}
+  <img transition:fade="{{delay: 1500, duration: 600}}" class="foot1" src="{assets}/foot.svg" alt="">
+  <img transition:fade="{{delay: 500, duration: 600}}" class="foot2" src="{assets}/foot.svg" alt="">
+ <img transition:fade="{{delay: 2500, duration: 600}}" class="foot3" src="{assets}/foot.svg" alt="">
+ <img transition:fade="{{delay: 3500, duration: 600}}" class="foot4" src="{assets}/foot.svg" alt=""> 
+ {/if}
 </article>
 
 <style>
+
+  .foot1 {
+    transform: rotate(20deg);
+  }
+
+  .foot2 {
+    transform: scaleX(-1) rotate(-40deg);
+    
+  }
+
+  .foot3 {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    transform: scaleX(-1) rotate(-40deg) 
+  }
+
+  .foot4 {
+    position: absolute;
+    top: -10%;
+    left: 20%;
+    transform: rotate(20deg) 
+  }
 	ul {
 		list-style: inside;
 	}
