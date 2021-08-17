@@ -26,10 +26,13 @@
 	function handleGesture() {
 		if (touchendX <= touchstartX) {
 			console.log('Swiped left');
+
+			nextPage();
 		}
 
 		if (touchendX >= touchstartX) {
 			console.log('Swiped right');
+			prevPage();
 		}
 
 		if (touchendY <= touchstartY) {
@@ -45,26 +48,35 @@
 		}
 	}
 
-	function handleKeyDown(event) {
-		switch (event.key) {
-			case 'ArrowLeft':
-				currentPage.update((cur) => {
+	function prevPage() {
+		currentPage.update((cur) => {
 					if (cur > 0) {
 						return cur - 1;
 					} else {
 						return cur;
 					}
 				});
+	}
+
+	function nextPage() {
+
+		currentPage.update((cur) => {
+			if (cur == Object.keys(navigationMap).length - 1) {
+				return cur;
+			} else {
+				console.log('current', cur);
+				return cur + 1;
+			}
+		});
+	}
+
+	function handleKeyDown(event) {
+		switch (event.key) {
+			case 'ArrowLeft':
+				prevPage();
 				break;
 			case 'ArrowRight':
-				currentPage.update((cur) => {
-					if (cur == Object.keys(navigationMap).length - 1) {
-						return cur;
-					} else {
-						console.log('current', cur);
-						return cur + 1;
-					}
-				});
+				nextPage()
 				break;
 		}
 	}
