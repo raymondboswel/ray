@@ -17,75 +17,82 @@
 	let unsubscribe;
 
 	let touchstartX = 0;
-let touchstartY = 0;
-let touchendX = 0;
-let touchendY = 0;
+	let touchstartY = 0;
+	let touchendX = 0;
+	let touchendY = 0;
 
-let gestureZone;
+	let gestureZone;
 
-function handleGesture() {
-    if (touchendX <= touchstartX) {
-        console.log('Swiped left');
-    }
-    
-    if (touchendX >= touchstartX) {
-        console.log('Swiped right');
-    }
-    
-    if (touchendY <= touchstartY) {
-        console.log('Swiped up');
-    }
-    
-    if (touchendY >= touchstartY) {
-        console.log('Swiped down');
-    }
-    
-    if (touchendY === touchstartY) {
-        console.log('Tap');
-    }
-}
+	function handleGesture() {
+		if (touchendX <= touchstartX) {
+			console.log('Swiped left');
+		}
+
+		if (touchendX >= touchstartX) {
+			console.log('Swiped right');
+		}
+
+		if (touchendY <= touchstartY) {
+			console.log('Swiped up');
+		}
+
+		if (touchendY >= touchstartY) {
+			console.log('Swiped down');
+		}
+
+		if (touchendY === touchstartY) {
+			console.log('Tap');
+		}
+	}
 
 	function handleKeyDown(event) {
 		switch (event.key) {
-				case 'ArrowLeft':
-					currentPage.update((cur) => {
-						if (cur > 0) {
-							return cur - 1;
-						} else {
-							return cur;
-						}
-					});
-					break;
-				case 'ArrowRight':
-					currentPage.update((cur) => {
-						if (cur == Object.keys(navigationMap).length - 1) {
-							return cur;
-						} else {
-							console.log('current',cur);
-							return cur + 1;
-						}
-					});
-					break;
-			}
+			case 'ArrowLeft':
+				currentPage.update((cur) => {
+					if (cur > 0) {
+						return cur - 1;
+					} else {
+						return cur;
+					}
+				});
+				break;
+			case 'ArrowRight':
+				currentPage.update((cur) => {
+					if (cur == Object.keys(navigationMap).length - 1) {
+						return cur;
+					} else {
+						console.log('current', cur);
+						return cur + 1;
+					}
+				});
+				break;
+		}
 	}
 
 	onDestroy(() => {
-		if(unsubscribe) {
-			unsubscribe();	
-			document.removeEventListener('keydown', handleKeyDown)
-			gestureZone.removeEventListener('touchstart', function(event) {
-    touchstartX = event.changedTouches[0].screenX;
-    touchstartY = event.changedTouches[0].screenY;
-}, false);
+		if (unsubscribe) {
+			unsubscribe();
+			document.removeEventListener('keydown', handleKeyDown);
+			gestureZone.removeEventListener(
+				'touchstart',
+				function (event) {
+					touchstartX = event.changedTouches[0].screenX;
+					touchstartY = event.changedTouches[0].screenY;
+				},
+				false
+			);
 
-gestureZone.removeEventListener('touchend', function(event) {
-    touchendX = event.changedTouches[0].screenX;
-    touchendY = event.changedTouches[0].screenY;
-    handleGesture();
-}, false); 
-			
-		} 
-	})
+			gestureZone.removeEventListener(
+				'touchend',
+				function (event) {
+					touchendX = event.changedTouches[0].screenX;
+					touchendY = event.changedTouches[0].screenY;
+					handleGesture();
+				},
+				false
+			);
+		}
+	});
 
 	onMount(() => {
 		unsubscribe = currentPage.subscribe((p) => {
@@ -99,16 +106,24 @@ gestureZone.removeEventListener('touchend', function(event) {
 
 		gestureZone = document.getElementById('gestureZone');
 
-gestureZone.addEventListener('touchstart', function(event) {
-    touchstartX = event.changedTouches[0].screenX;
-    touchstartY = event.changedTouches[0].screenY;
-}, false);
+		gestureZone.addEventListener(
+			'touchstart',
+			function (event) {
+				touchstartX = event.changedTouches[0].screenX;
+				touchstartY = event.changedTouches[0].screenY;
+			},
+			false
+		);
 
-gestureZone.addEventListener('touchend', function(event) {
-    touchendX = event.changedTouches[0].screenX;
-    touchendY = event.changedTouches[0].screenY;
-    handleGesture();
-}, false); 
+		gestureZone.addEventListener(
+			'touchend',
+			function (event) {
+				touchendX = event.changedTouches[0].screenX;
+				touchendY = event.changedTouches[0].screenY;
+				handleGesture();
+			},
+			false
+		);
 	});
 </script>
 
