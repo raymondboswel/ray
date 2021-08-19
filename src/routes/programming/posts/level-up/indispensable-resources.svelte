@@ -1,6 +1,7 @@
 <script>
 	import { slide } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
+	import { assets } from '$app/paths';
 	let animation = undefined;
 </script>
 
@@ -15,6 +16,7 @@
 				<li>Bonus resources: Reddit + Twitter</li>
 			</ul>
 		</div>
+	<img src="{assets}/shower.jpg" />
 	</section>
 </article>
 
