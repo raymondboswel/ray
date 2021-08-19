@@ -6,6 +6,7 @@
 	import { onDestroy, onMount } from 'svelte';
 
 	const navigationMap = {
+		6: '/programming/posts/level-up/indispensable-resources',
 		5: '/programming/posts/level-up/ways-to-learn',
 		4: '/programming/posts/level-up/learning-ideas',
 		3: '/programming/posts/level-up/meta-learning',
@@ -50,16 +51,15 @@
 
 	function prevPage() {
 		currentPage.update((cur) => {
-					if (cur > 0) {
-						return cur - 1;
-					} else {
-						return cur;
-					}
-				});
+			if (cur > 0) {
+				return cur - 1;
+			} else {
+				return cur;
+			}
+		});
 	}
 
 	function nextPage() {
-
 		currentPage.update((cur) => {
 			if (cur == Object.keys(navigationMap).length - 1) {
 				return cur;
@@ -76,7 +76,7 @@
 				prevPage();
 				break;
 			case 'ArrowRight':
-				nextPage()
+				nextPage();
 				break;
 		}
 	}
