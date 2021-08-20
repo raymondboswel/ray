@@ -31,6 +31,7 @@
 						<li>Coursera</li>
 						<li>Udemy</li>
 						<li>Udacity</li>
+						<li><a href="https://teachyourselfcs.com/">teachyourselfcs.com</a></li>
 					</ul>
 				</li>
 				<li><a href="https://projecteuler.net">Project Euler</a></li>
